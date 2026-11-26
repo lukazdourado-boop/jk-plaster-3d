@@ -299,3 +299,20 @@ h2 { background: linear-gradient(180deg, #f3ead8 30%, #c9a24a 130%); -webkit-bac
   .momento--centro { left: var(--gutter); right: var(--gutter); width: auto; transform: translateY(24px); }
   .momento--centro.ativo { transform: none; }
 }
+
+/* Dica "Role para baixo" */
+.cine-dica { bottom: 26px; gap: 10px; opacity: .95; text-transform: none; letter-spacing: 0; }
+.cine-dica span { width: auto; height: auto; background: none; animation: none; }
+.dica-texto { font-family: var(--fonte-titulo); font-size: 22px; font-weight: 600; letter-spacing: .14em !important; text-transform: uppercase; color: var(--texto); text-shadow: 0 2px 14px rgb(0 0 0 / .8); animation: respira 2.4s ease-in-out infinite !important; }
+.dica-mouse { position: relative; display: block; width: 26px !important; height: 42px !important; border: 2px solid var(--acento); border-radius: 14px; box-shadow: 0 0 18px rgb(201 162 74 / .45); }
+.dica-mouse i { position: absolute; left: 50%; top: 8px; width: 4px; height: 8px; margin-left: -2px; border-radius: 2px; background: var(--acento); animation: roda 1.7s var(--ease) infinite; }
+.dica-setas { display: grid !important; justify-items: center; margin-top: -2px; }
+.dica-setas b { display: block; width: 12px; height: 12px; border-right: 2px solid var(--acento); border-bottom: 2px solid var(--acento); transform: rotate(45deg); margin-top: -4px; opacity: 0; animation: seta 1.7s ease-in-out infinite; }
+.dica-setas b:nth-child(2) { animation-delay: .25s; }
+@keyframes roda { 0% { transform: translateY(0); opacity: 1; } 70% { transform: translateY(14px); opacity: 0; } 100% { opacity: 0; } }
+@keyframes seta { 0% { opacity: 0; transform: translateY(-4px) rotate(45deg); } 50% { opacity: 1; } 100% { opacity: 0; transform: translateY(6px) rotate(45deg); } }
+@keyframes respira { 50% { opacity: .55; } }
+@media (max-width: 860px) { .dica-texto { font-size: 18px; } }
+
+.momento { bottom: 19vh; }
+@media (max-width: 860px) { .momento, .momento--direita, .momento--centro { bottom: 24vh; } }
